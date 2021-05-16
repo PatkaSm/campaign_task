@@ -1,0 +1,54 @@
+.campaign {
+  width: 280px;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  margin: 10px;
+  padding: 30px 20px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: var(--box-shadow);
+  }
+
+  &__name {
+    font-size: var(--fs14);
+    font-weight: var(--bold);
+    padding: 10px 0;
+    color: var(--dark-gray);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--title {
+      font-size: var(--fs16);
+    }
+  }
+
+  &__element {
+    padding: 5px 0;
+    color: var(--gray);
+  }
+
+  &__keywords {
+    padding-top: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .campaign {
+    width: 300px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .campaign {
+    width: 400px;
+  }
+}

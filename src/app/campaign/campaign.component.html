@@ -1,0 +1,23 @@
+<div class="campaign">
+  <div
+    [ngClass]="
+      campaign.status === true ? 'chips chips--green' : 'chips chips--red'
+    "
+  >
+    {{ campaign.status ? "Aktywna" : "Nieaktywna" }}
+  </div>
+
+  <div class="campaign__name campaign__name--title">{{ campaign.name }}</div>
+  <div class="campaign__name">
+    {{ campaign.product.name }}
+  </div>
+  <div class="campaign__element">Budżet: {{ campaign.fund }}$</div>
+  <div class="campaign__element">Miasto: {{ campaign.town }}</div>
+  <div class="campaign__element">Zasięg: {{ campaign.radius }} km</div>
+
+  <div class="campaign__keywords">
+    <span *ngFor="let tag of campaign.tags" class="chips chips--blue">
+      {{ tag }}</span
+    >
+  </div>
+</div>

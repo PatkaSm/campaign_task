@@ -1,0 +1,11 @@
+<app-modal [id]="modalID" [showClose]="false">
+  <div class="modal">
+    <h3 class="title">Czy na pewno chcesz usunąć {{ object }}?</h3>
+    <div class="modal__buttons">
+      <button class="btn btn--red" (click)="modalService.close(modalID)">
+        Anuluj
+      </button>
+      <button class="btn btn--green" (click)="delete.emit()">Usuń</button>
+    </div>
+  </div>
+</app-modal>

@@ -1,0 +1,31 @@
+<!-- <ng-container *ngFor="let product of products">
+  <app-product [product]="product"></app-product>
+</ng-container> -->
+<div class="container">
+  <div class="header">
+    <form [formGroup]="searchForm" class="search">
+      <app-form-input
+        [label]="'Szukaj'"
+        [requireLabelType]="false"
+        [name]="'search'"
+        [form]="searchForm"
+        [control]="controls.search"
+        [id]="'search'"
+        class="search__input"
+        (keyUpEvent)="getSearchValues()"
+      >
+      </app-form-input>
+      <app-svg [name]="'search'" [color]="'blue'" [size]="'20'"></app-svg>
+    </form>
+    <button class="btn btn--blue">
+      <span>Dodaj kampanię</span>
+    </button>
+  </div>
+
+  <div class="campaigns">
+    <app-campaign
+      [campaign]="campaign"
+      *ngFor="let campaign of campaigns"
+    ></app-campaign>
+  </div>
+</div>
