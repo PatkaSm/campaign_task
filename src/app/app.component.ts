@@ -7,9 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Campaign app';
-  budget = 15000;
 
-  constructor() {
-    localStorage.setItem('budget', this.budget.toString());
-  }
+  constructor() {}
 }

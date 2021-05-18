@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ModalService } from '../modal.service';
 
 @Component({
@@ -6,14 +6,25 @@ import { ModalService } from '../modal.service';
   templateUrl: './delete-modal.component.html',
   styleUrls: ['./delete-modal.component.scss'],
 })
-export class DeleteModalComponent implements OnInit {
+export class DeleteModalComponent {
+  /**
+   * Modal id
+   */
   @Input() modalID: string;
-  @Input() object: string;
-  @Input() objectType: string;
 
+  /**
+   * Object to delete
+   */
+  @Input() object: string;
+
+  /**
+   * Delete output
+   */
   @Output() delete: EventEmitter<any> = new EventEmitter();
 
+  /**
+   * Delete modal constructor
+   * @param modalService Modal service
+   */
   constructor(public modalService: ModalService) {}
-
-  ngOnInit(): void {}
 }

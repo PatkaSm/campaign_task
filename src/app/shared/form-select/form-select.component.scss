@@ -3,7 +3,7 @@
   width: 100%;
 
   label {
-    color: var(--dark-gray);
+    color: var(--gray);
     font-size: var(--fs12);
     font-weight: bold;
   }
@@ -11,18 +11,20 @@
   select {
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid var(--dark-gray);
+    border: 1px solid var(--light-gray);
+    background-color: white;
     height: inherit;
     width: 100%;
+    margin: 5px 0 8px 0;
     font-size: 14px;
-    padding: 9px 0;
+    padding: 9px;
     color: var(--dark-gray);
+    border-radius: var(--border-radius);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background-image: url("/assets/icons/arrow_down_icon.svg");
-    background-position: calc(100%) calc(12px), calc(100%) calc(1px),
-      calc(100%) 0.5em;
+    background-position: calc(98%) calc(8px), calc(100%), calc(100%) 1em;
     background-repeat: no-repeat;
     background-size: initial;
     cursor: pointer;
@@ -101,10 +103,10 @@ option {
 
 .input-field:focus-within {
   label {
-    color: var(--orange);
+    color: var(--blue);
   }
 
   select {
-    border-bottom: 1px solid var(--orange);
+    border: 1px solid var(--light-blue);
   }
 }

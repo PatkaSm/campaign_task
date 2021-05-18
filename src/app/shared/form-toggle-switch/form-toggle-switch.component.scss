@@ -6,7 +6,8 @@
   align-items: flex-start;
   color: var(--grey);
 
-  &__label {
+  label {
+    color: var(--gray);
     font-size: var(--fs12);
     font-weight: bold;
   }
@@ -21,6 +22,7 @@
       font-size: 14px;
       margin-right: 20px;
       width: 70px;
+      color: var(--gray);
     }
   }
 
@@ -45,7 +47,7 @@
     right: 0;
     bottom: 0;
     background-color: transparent;
-    border: 2px solid var(--light-brown);
+    border: 2px solid var(--blue);
     -webkit-transition: 0.4s;
     transition: 0.4s;
 
@@ -56,7 +58,7 @@
       width: 16px;
       left: 2px;
       bottom: 1px;
-      background-color: var(--light-brown);
+      background-color: var(--blue);
       transition: 0.4s;
     }
 
@@ -71,7 +73,7 @@
 
   &__input:checked + &__slider {
     background-color: transparent;
-    border: 2px solid var(--orange);
+    border: 2px solid var(--green);
   }
 
   &__input:focus + &__slider {
@@ -80,6 +82,6 @@
 
   &__input:checked + &__slider:before {
     transform: translateX(15px);
-    background-color: var(--orange);
+    background-color: var(--green);
   }
 }

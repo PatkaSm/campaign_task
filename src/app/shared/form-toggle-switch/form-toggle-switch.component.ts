@@ -73,8 +73,4 @@ export class FormToggleSwitchComponent implements OnInit {
   onFocus() {
     this.onFocusEvent.emit();
   }
-
-  onChange() {
-    this.onChangeEvent.emit(this.control.value);
-  }
 }

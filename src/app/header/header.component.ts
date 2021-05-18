@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CampaignService } from '../services/campaign.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  budget = 0;
-  constructor() {}
+  /**
+   * Header component constructor
+   * @param campaignService Campaign service
+   */
+  constructor(public campaignService: CampaignService) {}
 
-  ngOnInit(): void {
-    this.budget = Number(localStorage.getItem('budget'));
-  }
+  ngOnInit(): void {}
 }

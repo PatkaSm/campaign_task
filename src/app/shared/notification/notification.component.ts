@@ -8,18 +8,38 @@ import { NotificationService } from './notification.service';
   styleUrls: ['./notification.component.scss'],
 })
 export class NotificationComponent implements OnInit, OnDestroy {
+  /**
+   * Notification stte
+   */
   public state: any;
 
+  /**
+   * Subscription
+   */
   public sub: Subscription = new Subscription();
 
+  /**
+   * Success observable
+   */
   public success$: Observable<any>;
+
+  /**
+   * Errors observable
+   */
   public error$: Observable<any>;
 
+  /**
+   * Notification component constructor
+   * @param uiErrorMessengerService Notification service
+   */
   constructor(private uiErrorMessengerService: NotificationService) {
     this.success$ = this.uiErrorMessengerService.success;
     this.error$ = this.uiErrorMessengerService.error;
   }
 
+  /**
+   * On init add subsctiption to subscribe
+   */
   ngOnInit() {
     this.sub.add(
       this.success$.subscribe((msg) => {
@@ -46,10 +66,16 @@ export class NotificationComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * On destroy unsubscribe subscribtions
+   */
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
+  /**
+   * Close notification
+   */
   public onCancel(): void {
     this.state = null;
     this.uiErrorMessengerService.cancel.next({ cancel: true });

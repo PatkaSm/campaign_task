@@ -19,7 +19,6 @@
       ngDefaultControl
       [maxlength]="maxlength"
       [formControl]="control"
-      (change)="changeInput($event.target.value)"
       (keydown)="onKeyDown({ event: $event, value: input.value })"
       #input
     />

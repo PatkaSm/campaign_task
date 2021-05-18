@@ -117,10 +117,4 @@ export class FormInputComponent {
   public setFocus(state) {
     this.focusState = state;
   }
-
-  changeInput(value) {
-    if (this.datepicker) {
-      this.control.setValue(value);
-    }
-  }
 }

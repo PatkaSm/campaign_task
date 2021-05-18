@@ -1,4 +1,4 @@
-<div class="campaign">
+<div class="campaign" [routerLink]="['campaign', campaign.id]">
   <div
     [ngClass]="
       campaign.status === true ? 'chips chips--green' : 'chips chips--red'
@@ -11,13 +11,13 @@
   <div class="campaign__name">
     {{ campaign.product.name }}
   </div>
-  <div class="campaign__element">Budżet: {{ campaign.fund }}$</div>
-  <div class="campaign__element">Miasto: {{ campaign.town }}</div>
+  <div class="campaign__element">Budżet: {{ campaign.fund }} zł</div>
+  <div class="campaign__element">Miasto: {{ campaign.town.value }}</div>
   <div class="campaign__element">Zasięg: {{ campaign.radius }} km</div>
 
   <div class="campaign__keywords">
-    <span *ngFor="let tag of campaign.tags" class="chips chips--blue">
-      {{ tag }}</span
+    <span *ngFor="let keyword of campaign.keywords" class="chips chips--blue">
+      {{ keyword.value }}</span
     >
   </div>
 </div>

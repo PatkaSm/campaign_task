@@ -71,7 +71,7 @@ export class FormSelectComponent implements OnInit {
 
   @Output() changeEvent: EventEmitter<any> = new EventEmitter();
 
-  public get selected() {
+  get selected() {
     return typeof this.control.value === 'object' && this.control.value !== null
       ? this.control.value.id
       : this.control.value;

@@ -1,1 +1,107 @@
-<p>add-edit-campaign works!</p>
+<form class="form" [formGroup]="form">
+  <div class="form__buttons">
+    <!-- <app-svg [name]="'edit'" [color]="'blue'" [size]="'25'"></app-svg> -->
+    <app-svg
+      [name]="'delete'"
+      [color]="'red'"
+      [size]="'25'"
+      (click)="modalService.open(modalID)"
+    ></app-svg>
+  </div>
+
+  <div class="form__input">
+    <app-form-input
+      [label]="'Nazwa'"
+      [requireLabelType]="false"
+      [name]="'name'"
+      [form]="form"
+      [control]="controls.name"
+    >
+    </app-form-input>
+  </div>
+  <div class="form__input form__input--mid">
+    <app-form-select
+      [label]="'Produkt kampanii'"
+      [requireLabelType]="false"
+      [name]="'product'"
+      [form]="form"
+      [control]="controls.product"
+      [values]="products"
+    >
+    </app-form-select>
+  </div>
+  <div class="form__input form__input--short">
+    <app-form-input
+      [label]="'Kwota oferty (zł)'"
+      [placeholder]="'10000'"
+      [requireLabelType]="false"
+      [name]="'bidAmount'"
+      [form]="form"
+      [control]="controls.bidAmount"
+    >
+    </app-form-input>
+  </div>
+  <div class="form__input form__input--short">
+    <app-form-input
+      [label]="'Fundusz kampanii (zł)'"
+      [placeholder]="'20000'"
+      [requireLabelType]="false"
+      [name]="'fund'"
+      [form]="form"
+      [control]="controls.fund"
+    >
+    </app-form-input>
+  </div>
+  <div class="form__input form__input--mid">
+    <app-form-select
+      [label]="'Miasto'"
+      [requireLabelType]="false"
+      [name]="'town'"
+      [form]="form"
+      [control]="controls.town"
+      [values]="towns"
+    >
+    </app-form-select>
+  </div>
+  <div class="form__input form__input--short">
+    <app-form-input
+      [label]="'Zasięg (km)'"
+      [placeholder]="'200'"
+      [requireLabelType]="false"
+      [name]="'radius'"
+      [form]="form"
+      [control]="controls.radius"
+    >
+    </app-form-input>
+  </div>
+  <div class="form__input form__input--short">
+    <app-form-toggle-switch
+      [label]="'Status'"
+      [requireLabelType]="false"
+      [name]="'status'"
+      [form]="form"
+      [control]="controls.status"
+    >
+    </app-form-toggle-switch>
+  </div>
+  <div class="form__input">
+    <app-multiselect
+      [items]="tags"
+      [label]="'Keywords'"
+      [form]="form"
+      [control]="controls.keywords"
+      [name]="'keywords'"
+      (selectItems)="getSelecedTags($event)"
+      class="form__input"
+    >
+    </app-multiselect>
+  </div>
+
+  <button [routerLink]="'/'" class="btn btn--red">Anuluj</button>
+  <button (click)="submit()" class="btn btn--green">Zapisz kampanię</button>
+</form>
+<app-delete-modal
+  [modalID]="modalID"
+  [object]="'kampanię'"
+  (delete)="deleteCampaign()"
+></app-delete-modal>

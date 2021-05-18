@@ -5,20 +5,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-}
-
-.search {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 400px;
-
-  &__input {
-    width: 100%;
-  }
+  justify-content: flex-end;
 }
 
 .campaigns {
@@ -27,6 +14,42 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+
+.table {
+  width: 100%;
+  padding: 20px;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  &__row {
+  }
+
+  &__cell {
+    padding: 15px 0;
+    text-align: center;
+    &--small {
+      width: 80px;
+    }
+
+    &--align-start {
+      text-align: left;
+    }
+  }
+
+  &__status {
+    height: 12px;
+    width: 12px;
+    border-radius: 100%;
+
+    &--green {
+      background-color: var(--green);
+    }
+
+    &--red {
+      background-color: var(--red);
+    }
+  }
 }
 
 @media only screen and (min-width: 768px) {
