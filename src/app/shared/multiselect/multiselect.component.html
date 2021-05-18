@@ -1,0 +1,49 @@
+<section>
+  <div class="background" *ngIf="isOpen" (click)="toggle()"></div>
+  <label>{{ label }}</label>
+  <div class="multiselect">
+    <div class="selected">
+      <div class="selected__items">
+        <div
+          class="chips chips--blue"
+          (click)="deleteSelectedItem(item)"
+          *ngFor="let item of getSelected()"
+        >
+          <span>{{ item.value }}</span>
+        </div>
+      </div>
+      <div class="selected__couter">
+        {{ getSelected().length }}
+      </div>
+      <button class="btn" (click)="deleteAllSelected()">
+        <app-svg
+          [name]="'delete_icon'"
+          [color]="'blue'"
+          [size]="'20'"
+        ></app-svg>
+      </button>
+      <button class="btn" (click)="toggle()">
+        <app-svg
+          [name]="'arrow_down_icon'"
+          [color]="'blue'"
+          [size]="'20'"
+        ></app-svg>
+      </button>
+    </div>
+    <span
+      class="error"
+      *ngIf="
+        form.controls[name] &&
+        form.controls[name].errors &&
+        form.controls[name].errors['error']
+      "
+    >
+      {{ form.controls[name].errors["error"] }}
+    </span>
+    <div class="options" [ngClass]="{ 'is-open': isOpen }" *ngIf="isOpen">
+      <div class="option" *ngFor="let item of table">
+        <span (click)="handlePermissionChange(item)">{{ item.value }}</span>
+      </div>
+    </div>
+  </div>
+</section>

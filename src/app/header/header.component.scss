@@ -1,0 +1,21 @@
+header {
+  width: 100%;
+  padding: 20px 30px;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.logo {
+  font-size: var(--fs25);
+}
+
+.nav {
+  &__item {
+    color: var(--white);
+    margin: 0 10px;
+  }
+}

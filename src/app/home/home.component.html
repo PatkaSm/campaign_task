@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="header">
+    <a [routerLink]="['add/campaign']">
+      <button class="btn btn--blue">
+        <span>Dodaj kampanię</span>
+      </button>
+    </a>
+  </div>
+
+  <div class="campaigns">
+    <app-campaign
+      [campaign]="campaign"
+      *ngFor="let campaign of campaigns"
+    ></app-campaign>
+  </div>
+</div>
