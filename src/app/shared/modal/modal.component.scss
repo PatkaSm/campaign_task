@@ -22,7 +22,7 @@ $blur: 4px;
     transition: 0.3s opacity;
 
     &__body {
-      min-width: 550px;
+      min-width: 350px;
       max-height: 80vh;
       overflow: auto;
       background: #fff;
@@ -124,12 +124,9 @@ $blur: 4px;
 
 @media (max-width: 702px) {
   .modal__body {
-    // display: flex;
-    // align-items: center;
-    // justify-content: center;
-    overflow: auto;
-    height: 100%;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
